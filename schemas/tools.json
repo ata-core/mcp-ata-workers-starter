@@ -1,0 +1,26 @@
+{
+  "search_orders": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "description": "Find orders for a customer",
+    "required": ["customer_id"],
+    "additionalProperties": false,
+    "properties": {
+      "customer_id": { "type": "string", "pattern": "^cus_[a-z0-9]{8,}$", "description": "The customer id, as issued" },
+      "status": { "type": "string", "enum": ["open", "shipped", "cancelled"] },
+      "limit": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 }
+    }
+  },
+  "send_receipt": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "description": "Email a receipt for one order",
+    "required": ["order_id", "email"],
+    "additionalProperties": false,
+    "properties": {
+      "order_id": { "type": "string", "pattern": "^ord_[a-z0-9]{8,}$" },
+      "email": { "type": "string", "format": "email" },
+      "note": { "type": "string", "maxLength": 200 }
+    }
+  }
+}

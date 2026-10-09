@@ -1,0 +1,29 @@
+{
+  "name": "mcp-ata-workers-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An MCP server on Cloudflare Workers whose tool inputs are validated by ata-validator, compiled ahead of time, with a retry message the model can act on",
+  "scripts": {
+    "tools": "node --import tsx scripts/compile-tools.ts",
+    "dev": "npm run tools && wrangler dev",
+    "deploy": "npm run tools && wrangler deploy",
+    "test": "npm run tools && vitest run",
+    "measure": "npm run tools && node --import tsx scripts/measure.ts"
+  },
+  "dependencies": {
+    "@ata-project/mcp": "^0.1.3",
+    "@hono/mcp": "^0.3.2",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "hono": "^4.11.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "ata-validator": "^1.48.0",
+    "esbuild": "^0.25.9",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "wrangler": "^4.40.0"
+  }
+}

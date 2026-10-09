@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "mcp-ata-workers-starter" generated at 2026-10-09T17:21:20.950Z.
