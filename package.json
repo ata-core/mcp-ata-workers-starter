@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "ata-validator": "^1.48.0",
+    "ata-validator": "^1.63.1",
     "esbuild": "^0.25.9",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
